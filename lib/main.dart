@@ -11,8 +11,8 @@ void main() async {
 
   Hive.registerAdapter(ProductsVOAdapter());
   Hive.registerAdapter(RatingVOAdapter());
+
   await Hive.openBox<ProductsVO>(kBoxNameForProductsVO);
-  await Hive.openBox<ProductsVO>(kBoxNameForRatingVO);
   runApp(const MyApp());
 }
 

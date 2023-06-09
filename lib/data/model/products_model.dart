@@ -4,7 +4,7 @@ import '../vos/rating_vo/rating_vo.dart';
 abstract class ProductsModel {
   Future<List<ProductsVO>?> getProductsList();
 
-  Future<ProductsVO>? getProductDetail(int productId);
+  ProductsVO? getProductDetail(int productId);
 
   Future<List<RatingVO>?> getRating();
 

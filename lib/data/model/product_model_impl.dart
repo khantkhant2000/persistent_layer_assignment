@@ -18,8 +18,8 @@ class ProductsModelImpl extends ProductsModel {
   final ProductsDAO _productsDAO = ProductsDAOImpl();
 
   @override
-  Future<ProductsVO>? getProductDetail(int productId) =>
-      _productsDataAgent.getProductDetailResponse(productId);
+  ProductsVO? getProductDetail(int productId) =>
+      _productsDAO.getProductFromDataBaseByID(productId);
 
   @override
   Future<List<ProductsVO>?> getProductsList() =>

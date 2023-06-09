@@ -8,6 +8,7 @@ import '../view_items/products_detail_page_view_items.dart';
 
 class ProductsDetailPage extends StatefulWidget {
   const ProductsDetailPage({super.key, required this.productsId});
+
   final int productsId;
 
   @override
@@ -17,13 +18,14 @@ class ProductsDetailPage extends StatefulWidget {
 class _ProductsDetailPageState extends State<ProductsDetailPage> {
   final ProductsModel _productsModel = ProductsModelImpl();
   ProductsVO? product;
+
   @override
   void initState() {
-    _productsModel.getProductDetail(widget.productsId)?.then((value) {
+    if (mounted) {
       setState(() {
-        product = value;
+        product = _productsModel.getProductDetail(widget.productsId);
       });
-    });
+    }
     super.initState();
   }
 

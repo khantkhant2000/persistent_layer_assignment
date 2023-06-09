@@ -28,4 +28,8 @@ class ProductsDAOImpl extends ProductsDAO {
 
   @override
   Stream watchProducts() => _productsBox().watch();
+
+  @override
+  ProductsVO? getProductFromDataBaseByID(int productID) =>
+      _productsBox().get(productID);
 }
